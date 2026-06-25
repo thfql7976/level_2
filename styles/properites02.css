@@ -1,0 +1,23 @@
+.movie {
+    width:500px;/* 가로 */
+    height:300px;/* 세로 */
+    background-color:#DAB1FF;/* 배경색 */
+    border:1px solid #9979F8; /* 외각선 */
+    border-radius:8px; /* 모서리크기 */
+    padding:20px 0 0 20px;/* 패딩 */
+}
+.movie > h1{
+    font-family:'Pretendard', '맑은 고딕';/* 글씨체 */
+    font-size:1.25em;/* 글씨크기 */
+    font-weight:600;/* 폰트체 */
+    letter-spacing:-0.02em;/* 행간 */
+    line-height:1.2;/* 자간 */
+}
+.movie > .prolog > h2 {
+    font-family:'Pretendard', '맑은 고딕';
+    font-weight:500;
+    letter-spacing:-0.02em;
+    line-height:1;
+    margin:0 0 15px 0;
+}
+.movies
