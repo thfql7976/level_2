@@ -40,8 +40,8 @@
 * `font-family` : 글꼴성정, 2개 이상 글꼴 작성하기
 * `font-size` : 글자크기, px->em으로 전환해서 작성하기
 * `font-weight` : 글자굵기, 보통(400) +- 100 설정
-* `font-spacing` : 자간, -2%, -> -0.02em
-* `font-height` : 행간, 100%-> 1, 150%->1.5
+* `letter-spacing` : 자간, -2%, -> -0.02em
+* `line-height` : 행간, 100%-> 1, 150%->1.5
 * `color` : 글자색상
 ## box
 * `border` : **두께 모양 색상** 순서로 작성 예) 1px soild #000; 세미콜론은 맨뒤
@@ -73,12 +73,24 @@
   * 메인축 column인 경우 : 위, 가운데, 아래, 양쪽 끝, 균등여백
   * 왼쪽,위(flex-start), 가운데(center), 오른쪽,아래(flex-end)
   * 양쪽 끝(space-between), 균등여백(space-around)
-  * `align-content: 교차축2줄이상정렬값`, `aling-items: 교차축1줄정렬값`
+* `align-content: 교차축2줄이상정렬값`, `aling-items: 교차축1줄정렬값`
   * flex-flow의 값이 `nowrap` 이면 -> `aling-items`
   * flex-flow의 값이 `wrap`이고 교차축이 2줄이상이면 -> `aling-content`
   * **aling-content만 space-between, space-around 값 사용가능**
   * `flex-end, flex-start, center`는 **aling-content, items 모두 사용가능**
   * `flex-flow:row nowrap: align-items:flex-end;`
-  * 해석) 메인축이 수평, 자식들 줄바꿈 안함, 교차축 수직, 교차축방향으로 아래쪽으로 자식 배치
+  * 해석) 메인축이 수평, 자식들 줄바꿈 안함, 교차축 수직, 
+  교차축방향으로 아래쪽으로 자식 배치
   * `flex-flow:column wrap; align-content:conter;`
   * 해석) 메인축이 수직, 줄바꿈 함, 교차축 수평, 교차축 방향으로 2줄 이상올때 가운데정렬
+### position
+#### position: absolute;
+* 피그마에서 **오토레이아웃무시** 기능으로 **부모프레임 위치에서 상대적으로 위치를 맞췄을떄** 사용
+1. 태그 상의 부모 후보들 중에(부모, 조상 모두 포함) 원하는 기준 대상을 position 속성으로 설정한다.
+2. 1번 기준 설정 완료 후 실제 움직이고 싶은 대상에 `absolute`를 설정해서
+`left, top, right, bottm` 선택옵션을 통해 위치를 이동한다.
+#### position:fixed;
+* 피그마에서 **오토레이아웃무시->프로토타입 위치(고정)->좌표설정** 한 경우
+1. body 태그의 자식 위치로 원하는 고정 목적 태그를 작성한다.
+2. body는 기본구조태그로 `position:relative`설정이 필요없다.
+3. 1번에서 작성한 태그에 `position:fixed;`와 가까운 좌표값을 입력한다.
