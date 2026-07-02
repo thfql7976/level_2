@@ -1,0 +1,108 @@
+/* table.01.css */
+/* 공통 */
+h1 {
+    font-size: 1.2em;
+    border-bottom: 1px dashed #333;
+    padding-bottom: 8px;
+}
+/* table {margin: 8px 10px 20px;} */
+/* table td {padding: 10px;} */
+/* 개별 */
+#t1 {
+    border:1px solid #000;}
+#t2 {
+    border-top: 4px solid #f00;}
+#t2 tr td {border:2px solid #00f;}
+/* 아이디t2요소 안 tr요소 안 td를 선택한다. */
+/* 자식선택자(>)는 특정부모 안 자식요소가 2개 이상 중복될떄 자식만 선택하기 위해서만 사용한다. */
+#t3 {border-bottom:2px solid #000;}
+#t3 tr * {border:1px solid #f00;}
+#t3 tr:nth-child(1) th {background-color: yellow;}
+#t3 tr:nth-child(1) td:nth-child(2) {background-color: pink;}
+#t3 tr:nth-child(2) td:nth-child(1) {background-color: greenyellow;}
+#t3 tr:nth-child(2) td:nth-child(3) {background-color: aqua;}
+/* td 내용 열 == p 내용 단락 */
+/* 도서 재고표 */
+#book_stock {
+    background-color: #f2f2f2;
+    border-radius: 25px;
+    overflow: hidden;
+}
+#book_stock tr {}
+#book_stock tr:nth-child(3) td {color: hotpink;}
+#book_stock tr:nth-child(3) {border: 3px solid#ff0066;}
+#book_stock tr:nth-child(1) th {color: #f2f2f2;}
+#book_stock tr th {width: 100px;
+background-color: hotpink;
+}
+#book_stock tr th:nth-child(1) {width: 250px;}
+#book_stock tr td {
+    text-align: center;/* 수평정렬 */
+}
+/* (아래) 선택자 해석 : 각 행(tr)의 첫번째(nth) td 선택 */
+#book_stock tr td:nth-child(1) {
+    text-align: left;
+    padding-left: 16px;
+}
+/* td, th 열 선택자에 동시 패딩 적용(tr의 모든 자식선택 */
+/* tr의 자식은 td, th만 올 수 있다. 만약 열 태그에 다른 a등의 태그를 쓸 경우 tr * 라고 쓰면 a태그
+까지 잡히므로 tr>* 로 써서 자식인 td,tr만 잡는 용도로 사용할 수 있다. */
+#book_stock tr >  * {padding: 16px;}
+/* 지역별 매출 현황 */
+.area_wrap {width: 750px;}
+.area_wrap .sale_title {
+    display: flex;/* 피그마 오토레이아웃 */
+    flex-flow: row nowrap;/* 오토레이아웃 흐름(가로 줄바꿈x) */
+    justify-content: space-between;/* 간격 자동(메인축정렬방법 */
+}
+.area_wrap .sale_title h2 {}
+.area_wrap .sale_title p {
+}
+.area_wrap #sale_status {
+    background-color: #f5f5f5;
+}
+.area_wrap #sale_status tr {}
+.area_wrap #sale_status tr:nth-child(1) {
+    border-top:2px solid #000;
+    border-bottom:2px solid #000;
+}
+.area_wrap #sale_status tr:nth-child(5) {background-color:green;}
+.area_wrap #sale_status tr th {
+    width: 150px;/* 같은 수직방향 td까지 동시 적용 */ height: 32px;/* 같은 수평방향 th 적용 */
+}
+.area_wrap #sale_status tr  td {
+    padding: 16px 0; text-align: center;
+}
+.area_wrap .src {
+    text-align: right;
+    background-color: yellowgreen;
+    /* width: 750px; */
+}
+/* 행&열합치기 연습용 */
+#t4 {margin: 24px;}
+#t4 * {
+    border: 1px solid #000;
+    text-align: center;
+    padding: 6px;
+}
+/* 선불요금제 */
+#pay {width: 1100px; background-color: #f5f5f5;}
+#pay tr:nth-child(1) {
+    border-top: 2px solid#000;
+    border-bottom: 1px dashed #000;
+} 
+#pay tr:nth-child(2) { border-bottom: 2px solid#000;} 
+#pay tr > * {padding: 15px;}
+#pay tr th {}
+#pay tr th img {}
+#pay tr th h2 {
+    padding: 10px;
+}
+#pay tr th p {}
+#pay tr th span {}
+#pay tr td {
+    text-align: center;
+}
+#pay tr td:nth-child(1) {width: 250px;}
+#pay tr td:nth-child(3) {width: 350px;}
+#pay tr td em {color: #ff0066;}
